@@ -7,11 +7,14 @@
     "lint:all": "stylelint \"src/**/*.scss\" --fix",
     "lint_no": "stylelint './**/*scss' --custom-syntax postcss-scss",
     "lint": "stylelint \"src/**/*.scss\"",
-    "lint:fix": "yarn lint --fix"
+    "lint:fix": "yarn lint --fix",
+    "prepare": "husky install",
+    "test": ""
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test"
     }
   },
   "lint-staged": {
@@ -27,7 +30,7 @@
     "stylelint-prettier": "^4.0.1"
   },
   "devDependencies": {
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "lint-staged": "^13.2.3",
     "postcss-scss": "^4.0.6",
     "stylelint-config-standard": "^34.0.0"
