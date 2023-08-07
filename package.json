@@ -1,0 +1,33 @@
+{
+  "name": "@kml/scss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint:all": "stylelint \"src/**/*.scss\" --fix",
+    "lint_no": "stylelint './**/*scss' --custom-syntax postcss-scss",
+    "lint": "stylelint \"src/**/*.scss\"",
+    "lint:fix": "yarn lint --fix"
+  },
+  "husky":{
+    "hooks":{
+      "pre-commit":"lint-staged"
+    }
+  },
+  "lint-staged":{
+    "*.scss": "yarn lint:fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "normalize-scss": "^7.0.1",
+    "prettier": "^3.0.0",
+    "stylelint": "^15.10.2",
+    "stylelint-config-sass-guidelines": "^10.0.0",
+    "stylelint-prettier": "^4.0.1"
+  },
+  "devDependencies": {
+    "postcss-scss": "^4.0.6",
+    "stylelint-config-standard": "^34.0.0"
+  }
+}
